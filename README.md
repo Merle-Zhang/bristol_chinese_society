@@ -34,7 +34,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Tutorial
 
-* [Flutter_Go 代码开发规范.md](https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
+* [How to create a new branch from other's and push your branch to remote repo](https://github.com/Merle-Zhang/bristol_chinese_society/blob/master/tutorial/branch.md)
 
 ### Style Guide
 
