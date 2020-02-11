@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:bristol_chinese_society/pages/posts_page.dart';
+import 'package:bristol_chinese_society/pages/events_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: '布里斯托中华同学会'),
     );
   }
 }
@@ -45,6 +47,23 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 1111: Home',
+      style: optionStyle,
+    ),
+    new PostsPage(),
+    new EventsPage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -91,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            _widgetOptions.elementAt(_selectedIndex),
             Text(
               'You have pushed the button this many times:',
             ),
@@ -106,6 +126,25 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+          bottomNavigationBar: BottomNavigationBar(
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          title: Text('Home'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.library_books),
+          title: Text('Posts'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.event),
+          title: Text('Events'),
+        ),
+      ],
+      currentIndex: _selectedIndex,
+      selectedItemColor: Colors.amber[800],
+      onTap: _onItemTapped,
+    ),
     );
   }
 }
