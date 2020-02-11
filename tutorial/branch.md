@@ -2,7 +2,7 @@
 
 * First you need to clone the remote repository
 
-        git clone https://github.com/Code4Good-UWMadison/UWanted.git
+        git clone https://github.com/Merle-Zhang/bristol_chinese_society.git
 
     Then create a new branch from an old branch you want to work from
 
